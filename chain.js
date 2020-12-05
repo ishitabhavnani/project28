@@ -3,7 +3,8 @@ class Chain{
         var options = {
             bodyA: bodyA,
             pointB: pointB,
-            stiffness: 0.04,
+            stiffness: 0.03,
+            length:2
             
         }
         this.pointB= pointB
@@ -16,12 +17,12 @@ class Chain{
         if (this.body.bodyA){
             var pointA = this.body.bodyA.position;
             var pointB = this.body.pointB;
-            //strokeWeight(4);
+            strokeWeight(4);
             line(pointA.x, pointA.y, pointB.x, pointB.y);
         }
     }
     
     fly(){
-        this.body.bodyA=null;
+      this.body.bodyA=null;
     }
 }

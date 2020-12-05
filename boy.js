@@ -13,7 +13,7 @@ class Boy {
       var pos =this.body.position;
       //rectMode(CENTER);
       fill("brown");
-      image(this.img,pos.x, pos.y, 200, 280 );
+      image(this.img,pos.x+10, pos.y, 200, 280 );
      // rect(pos.x, pos.y, this.width, this.height);
     }
   }

@@ -18,6 +18,12 @@ class Ball {
 
     //define all the Box functions here
     display () {
-        image(this.img , 15,500,70,70 )
+        push(); 
+        translate(this.body.position.x,this.body.position.y);
+        rotate(this.body.angle);
+        imageMode(CENTER); 
+        image(this.img ,0,0,this.r,this.r );
+         pop();
+       
     }
 }

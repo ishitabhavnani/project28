@@ -28,7 +28,7 @@ function setup() {
     ball= new Ball(15,500,50);
     tree= new Tree(600,400,50,80);
     boy=new Boy(10,450,80,100);
-    chain=new Chain(ball.body,{x:35,y:500});
+    chain=new Chain(ball.body,{x:59,y:523});
     m1=new Mango(550,220,60,60);
     m2=new Mango(500,250,60,60);
     m3=new Mango(550,150,60,60);
@@ -46,7 +46,7 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background("white");
   ground.display();
   boy.display();
   ball.display();
@@ -62,6 +62,17 @@ function draw() {
   m8.display();
   m9.display();
   m10.display();
+  detectCollision(ball,m1);
+  detectCollision(ball,m2);
+  detectCollision(ball,m3);
+  detectCollision(ball,m4);
+  detectCollision(ball,m5);
+  detectCollision(ball,m6);
+  detectCollision(ball,m7);
+  detectCollision(ball,m8);
+  detectCollision(ball,m9);
+  detectCollision(ball,m10);
+
   drawSprites();
  
 }
@@ -70,9 +81,18 @@ function mouseDragged(){
   Matter.Body.setPosition(ball.body , {x: mouseX , y:mouseY})
 }
 
-//function mouseReleased(){
- // chain.fly()
-//}
+function mouseReleased(){
+  chain.fly()
+}
 
+function detectCollision(lstone,lmango){
+  mangoBodyPosition=lmango.body.position
+  stoneBodyPosition=lstone.body.position
+
+  var distance=dist( stoneBodyPosition.x, stoneBodyPosition.y,mangoBodyPosition.x , mangoBodyPosition.y)
+  if (distance<=lmango.r+lstone.r){
+    Matter.Body.setStatic(lmango.body,false)
+  }
+}
 
 
