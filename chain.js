@@ -25,7 +25,9 @@ class Chain{
     fly(){
       this.body.bodyA=null;
     }
-}
-function attach(){
-    bodyA=body
+
+    
+    attach(bodyA){
+        this.body.bodyA = bodyA;
+    }
 }

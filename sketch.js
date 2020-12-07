@@ -73,16 +73,14 @@ function draw() {
   detectCollision(ball,m8);
   detectCollision(ball,m9);
   detectCollision(ball,m10);
- 
+ keyPressed();
 }
 
 function mouseDragged(){
   Matter.Body.setPosition(ball.body , {x: mouseX , y:mouseY})
 }
 
-function mouseReleased(){
-  chain.fly()
-}
+
 
 function detectCollision(lstone,lmango){
   mangoBodyPosition=lmango.body.position
@@ -99,6 +97,9 @@ function keyPressed(){
     Matter.Body.setPosition(ball.body, {x:59,y:520})
     chain.attach(ball.body)
   }
+}
+function mouseReleased(){
+  chain.fly()
 }
 
 
