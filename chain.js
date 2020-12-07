@@ -26,3 +26,6 @@ class Chain{
       this.body.bodyA=null;
     }
 }
+function attach(){
+    bodyA=body
+}

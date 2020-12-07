@@ -10,8 +10,8 @@ class Tree {
       World.add(myWorld, this.body);
     }
     display(){
-      image(this.img , 500,100,300,600)
-      var pos =this.body.position;
+      image(this.img , 400,100,450,600)
+      //var pos =this.body.position;
       //rectMode(CENTER);
      
       //rect(pos.x, pos.y, this.width, this.height);
