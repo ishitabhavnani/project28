@@ -17,14 +17,14 @@ function preload()
 }
 
 function setup() {
-	createCanvas(800, 700);
+	createCanvas(900, 700);
 
 
 	engine = Engine.create();
 	myWorld = engine.world;
 
 	//Create the Bodies Here.
-    ground = new Ground(400,680,800,40);
+    ground = new Ground(400,680,900,40);
     ball= new Ball(15,500,50);
     tree= new Tree(600,400,50,80);
     boy=new Boy(10,450,80,100);
@@ -48,6 +48,13 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background("white");
+
+  if (ball.body.position.x>70){
+    text("Press Space to get a second chance to play",100,250)
+  }
+  else if (ball.body.position.x<70){
+   text ("Drag mouse to throw stone",100,250)
+  }
   ground.display();
   boy.display();
   tree.display();
@@ -73,7 +80,7 @@ function draw() {
   detectCollision(ball,m8);
   detectCollision(ball,m9);
   detectCollision(ball,m10);
- keyPressed();
+ 
 }
 
 function mouseDragged(){
