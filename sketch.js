@@ -49,7 +49,7 @@ function draw() {
   rectMode(CENTER);
   background("white");
 
-  if (ball.body.position.x>70){
+  if (ball.body.position.x>70 ||ball.body.position.x<50){
     text("Press Space to get a second chance to play",100,250)
   }
   else if (ball.body.position.x<70){
